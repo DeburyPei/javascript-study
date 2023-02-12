@@ -1,4 +1,4 @@
-### javascript-study
+# javascript-study
  Learning note code of javascript
  
  Record the learning process for review
