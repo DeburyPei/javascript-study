@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            /*
+               |            或运算  表示两个二进制种有一个为1 则结果为1 否则为0                      
+               &            与运算  表示两个二进制位都为1 则结果为1 否则为0
+               ~             否运算       表示将一个二进制位变成相反值
+               ^              异或运算   表示将；两个二进制中 不相等为1 相等为0
+               >>              左移
+               <<               右移
+
+               5|3  //7
+               0b101|0b011 = 0b111  二进制
+               5&3
+               0b101&0b011 // 0b001 === 1 
+               ~5  //-6   x + ~x + 1 === 0   ~0b101  = 0b010
+               0000000000000101  -》 11111111111111010
+               5^3  //6
+               0b101^0b011 0b110
+               3<<3  0b011  to 0b011000 24
+               0b011>>1 0b01 === 1
+            
+            */
+        //    交换数
+           let a=3,b=4;
+           a = a^b;
+           b = a^b;
+           a = a^b;
+
+    </script>
+</body>
+</html>
