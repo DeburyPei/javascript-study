@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            不变的时const 声明变量的内容
+
+            对于引用类型 存储的是地址
+            只要地址不变就不会报错
+
+            []与 [] 是两个不同的地址 所以报错
+         
+        */
+        const a  = 1
+        a = 2  //报错
+
+        const obj = {name:"hello"}
+        obj.name = 'jirengu'  // 不
+
+        const arr = [1,2,3]// 不
+        arr[0] = 2
+
+        const arr2 = []//报错
+        arr2 = []
+    </script>
+</body>
+</html>

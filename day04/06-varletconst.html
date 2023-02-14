@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            var
+                 - var是ES3定义变量的方式
+                 - 在作用域内声明前置
+                 - 可重复声明
+                 - 没有块级作用域
+            let 
+                 - let 和 const是ES6定义变量的方式
+                 - 先声明再使用(无声明前置)
+                 - 不可重复声明
+                 - 有块级作用域
+            const 
+                 - 同let
+                 - 声明时需要立即初始化
+                 - 初始化后不能再修改
+            
+        */
+       //可以先赋值 再声明
+       a = 3
+       var a
+       {
+         var a = 2
+       }
+       console.log(a);
+       //重复声明
+       var a
+       var a
+       a = 3
+       a = 2
+       console.log(a);
+
+       /*
+       错误 未声明前使用
+       a = 3
+       let a
+       let a = 2
+       
+       //没有初始化
+       const a
+
+       //块级作用域 
+       for(let i=0;i<10;i++){log(i)}
+       console.log(i)
+
+       //不能修改const的值
+       const a =1
+       a = 2
+       */
+
+
+    </script>
+</body>
+</html>

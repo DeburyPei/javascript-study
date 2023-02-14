@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            原始类型存储的是值 复制的是值
+            引用类型存储的是地址 复制的是地址 修改的是地址指向的内容
+        */
+        let a = 3
+        let b = a   //复制的是值
+        a = 13
+        console.log(b);
+
+        let arr1 = [3,1,8]
+        let arr2 = arr1   //复制的是地址
+        arr1[0] = 13
+        console.log(arr2);
+    </script>
+</body>
+</html>

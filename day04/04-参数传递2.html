@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function incArr(arr){
+            arr = []
+        }
+        let arr1 = [1,2,3]
+        incArr(arr1)
+        console.log(arr1);   // [1,2,3]
+
+        /*
+            也就相当于 给 arr 重新换了个地址 但是压根没有改变 0x001 的地址内容
+            function incArr(arr){
+                    let arr = arr1
+                    arr = []
+                }
+            
+            arr1 | 0x001
+            arr  | 0x003
+
+            0x001 | [1,2,3]
+            0x003 | []
+        
+        
+        */
+    </script>
+</body>
+</html>

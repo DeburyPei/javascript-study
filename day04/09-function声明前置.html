@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            注意函数声明和函数表达式的区别
+            
+        
+        */
+        fn() // 不报错
+        function fn(){
+            console.log('yes');
+            
+        }
+
+        fn2()  // 报错   const需要先初始化再使用
+        const fn2 = function(){
+            console.log('fn2');
+            
+        }
+    </script>
+</body>
+</html>

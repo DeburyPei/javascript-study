@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            TDZ 
+                const let变量再当前作用域的开头到当前声明该变量之间的区域
+                属于暂时性死区 不可访问该变量
+
+            
+            如果出现var 需关注var 声明前置
+
+        */
+       //如果出现var 需关注var 声明前置
+
+       let a = 0
+       function foo(){
+            bar()
+            var a = 1
+            function bar(){
+                console.log(a);
+                
+            }
+       }
+
+       //前置
+       let a = 0
+       function foo(){     
+            var a   // 此时 a undefined 未定义
+            function bar(){
+                console.log(a);     
+            }
+            bar()  //执行
+            a = 1
+       }
+       foo()    //输出 undefined  
+
+       //暂时性死区 直接报错
+       let a = 0
+       function foo(){
+            // 暂时性死区  这个范围内 无法使用a
+            bar()
+
+
+
+
+
+            //
+            let a = 1   // 上面是暂时性死区  必须在let 声明前去调用
+            function bar(){
+                console.log(a);
+            }
+
+       }
+       foo()
+
+    </script>
+</body>
+</html>

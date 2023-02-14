@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // 例子 1 
+        var a = 1
+        function fn1(){
+            function fn2() {
+                console.log(a);   // 2
+                
+            }
+            function fn3(){
+                var a = 4
+                fn2()
+            }
+            var a = 2
+            return fn3
+        }
+        var fn = fn1()
+        fn()
+
+        // 例子 2 
+        var a = 1
+        function fn1(){
+            function fn3(){
+                var a = 4
+                fn2()
+            }
+            var a = 2
+            return fn3
+
+        }
+        function fn2(){
+            console.log(a)
+        }
+        var fn = fn1()
+        fn()    // 1
+
+        // 例子 3
+        var a = 1
+        function fn1(){
+            function fn3(){
+                //到这一层就不会再向上再去找了
+                
+                function fn2(){
+                    console.log(a)
+                }
+                fn2()
+                var a = 4
+                
+            }
+            var a = 2
+            return fn3
+        }
+        var fn = fn1()
+        fn()    // undefined
+        /*  
+        fn3 相当于  以下 所以 var 前置 没有赋值 所以 undefomed
+             function fn3(){
+                //到这一层就不会再向上再去找了
+                var a
+                function fn2(){
+                    console.log(a)
+                }
+                fn2()
+                a = 4
+                
+            }
+        
+        */
+    </script>
+</body>
+</html>

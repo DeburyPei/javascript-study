@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            作用域链
+                当需要访问某个变量时 先从自己的作用域查找
+                如果找不到再从创建当前函数所在的作用域 (词法作用域) 去找 以此网上 直到全局作用域
+        */
+        let a = 0
+        function foo(){
+            let a = 1
+            bar()   
+        }
+        function bar(){        //找不到 该函数里面变量 a 然后去创建函数的地方 == 全局
+            console.log(a);   // 选泽的是全局变量的 a = 0 
+        }
+        foo()
+
+        let a = 0
+        function foo(){
+            let a = 1
+            bar()      // 输出1   寻找创建函数所在的作用域
+            function bar(){
+            console.log(a);    
+        }
+        }
+        
+        foo()
+            </script>
+</body>
+</html>

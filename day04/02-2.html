@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = "jirengu"
+        let b = "jirengu"
+        console.log(a===b);   // true
+
+        let obj1 = { a:1,b:2}
+        let obj2 = {a:1,b:2}
+        //引用类型 存的是地址    引用之间的比较就是比较地址想不想同 不比较地址里面的数据
+        console.log(obj1===obj2);   // false
+        console.log([] === []);     // false   两个空数组 是两个新创建的地址
+
+        function sum(a,b){return a+b} 
+        const sum2 = () => a + b
+        let sum3 = sum    //相同地址
+        console.log(sum2 === sum);  // false 
+        console.log(sum3 === sum);  //true
+
+    </script>
+</body>
+</html>

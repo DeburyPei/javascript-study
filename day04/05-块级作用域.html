@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            let const 存在块级作用域
+            var 没有块级别作用域    
+        */
+        var a = 1
+        let b = 2
+        if(true){
+            var a = 11
+            let b = 22
+        }
+        console.log(a);  // 11
+        console.log(b); // 2
+        
+    </script>
+</body>
+</html>
