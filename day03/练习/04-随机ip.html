@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //考了一个随机数 Math.floor(Math.random()*数字)  标准例子  [0,数字)
+        //  const fun = () => 
+        function randomIp(){
+            const randomNum =  () =>Math.floor(Math.random()*256)
+
+            return `${randomNum()}.${randomNum()}.${randomNum()}.${randomNum()}`
+        }
+    </script>
+</body>
+</html>

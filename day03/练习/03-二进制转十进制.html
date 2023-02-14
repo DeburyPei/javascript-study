@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         // 从前到后
+        function bToTen(str){
+            let num = 0
+
+            for(let i in str){
+                num+=parseInt(str[i])*(2**(str.length-i-1))
+                // console.log(i,str[i],str.length-i-1,num)
+                
+            }
+            return num
+        }
+        bToTen('11000000')
+        // 从后到前面
+        function base10(str){
+            let num = 0,idx = 0
+            while( idx < str.length){
+                num += parseInt(str[str.length-idx-1]*(2**idx))
+                idx++
+            }
+            return num
+        }
+    </script>
+</body>
+</html>

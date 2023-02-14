@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 函数
+                先声明再调用
+                调用才是真正的执行
+
+        */
+       // 函数声明   方式一
+       function My_sum(a,b){
+            return a+b
+       }
+       console.log(My_sum(1,2))
+
+       // 函数声明   方式二  才用 常量设置 const 因为函数也是不变的 不需要改变
+       const SayHello = function (name){
+        console.log('hello ' + name);
+       }
+       SayHello("jack")
+
+       /*
+                箭头函数
+                    如果参数只有一个 可以把参数小括号去掉 例如
+                        const jiantou = a =>  a + 2
+                    如果返回的值是对象 对象需要加小括号
+                        const createPet = name =>({name:name}
+       
+       */
+    //    const SayHello = function (name){
+    //     console.log('hello ' + name);
+    //    }
+     const jiantou = (a,b) =>{
+        return a + b
+     } //等价于
+    const jiantou1 = (a,b) =>  a + b
+     jiantou(3,4)
+
+     const sum = a  => b => a+b
+     sum(1)(2)  //3
+
+     //等价于  闭包
+     function sum(a){
+        return function(b){
+            return a + b
+        }
+     }
+
+
+    </script>
+</body>
+</html>
