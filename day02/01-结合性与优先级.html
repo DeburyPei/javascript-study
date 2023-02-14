@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*'
+            结合性
+                从左到右 or 从右到左
+                a = b = 1 赋值是从右到左
+                3 + 2 * 5 加法和乘法是从左到右
+
+            优先级
+                谁的优先级高先处理谁
+
+                从低到高
+                    逗号 < = < || < && < === < 大小判断（< >） < 加减 < 乘除 < typeof 最重要  大于所有加减乘除（++....）
+                            < 前置递增递减 < 逻辑非 (！。。。。) < 后置递减递增 （....++） < new < 成员访问 (x[y]或x.y)<小括号
+        */
+    //    练习
+
+        typeof 2 + 3  // 'number3'
+        typeof (2+3)  // 'number'
+        typeof typeof 2+3  // 'string3'
+
+        let a = 2 , b = 3
+        console.log(a+++b)   //  这样表达的是  a++ + b  
+
+        let c = d = 5
+        console.log(c)
+        let x = (a = 1,b = 2)
+        console.log(x,a,b);  // 2 1 2
+
+        let num = 50
+        let isOk = false
+        let result = !isOk&&num+10>60  // false
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num5 = 34.5678
+        num5.toFixed(2)   //34.567
+        num5.toPrecision(5)   //'34.567'  从第一个数字总共取到5位数字  限制整数加小数的总位数
+        2**53 - 1< 2**53 && 2**53 < 2**53+1    // 最大数为2**53  无法加1 false 超出最大安全值
+        Number.MAX_SAFE_INTEGER   // 2**53-1 最大安全值
+        Number.MAX_VALUE          // 1.79e+308
+        Number.MAX_VALUE*2        // Infinity  无限 了解
+                                        typeof Infinity   //'number'
+                                        typeof NaN        //'number'
+                                        Infinity === Infinity  // true
+                                        NaN === NaN   //false
+        
+        Math.floor(99.9)    //99 向下取整
+        Math.ceil(99.1)     //100 向上取整
+        Math.round(99.5)    //四舍五入  100
+        Math.random()       //得到一个0~1 的伪随机数  [0,1)  包括0不包括1
+        // 0 - 100  包括0 不包括100
+        Math.floor(Math.random()*100)
+        // 0 - 100  包括0 包括100
+        Math.floor(Math.random()*101)
+        //11 -99    0-88
+        11 + Math.floor(Math.random()*(99-11+1 ))
+        Math.pow(3,4)  //3的4次方 
+
+
+ 
+    </script>
+</body>
+</html>

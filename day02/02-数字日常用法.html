@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            let num1 = 10       10进制
+            let num2 = 0b10     2进制
+            let num3 = 010       8进制
+            let num4 = 0x10     16进制
+
+            console.log(parseInt('100'))
+            
+        */
+        console.log(parseInt('100'))    //100 默认10进制
+        console.log(parseInt('100',10)); //推荐写法  100转换10进制
+        console.log(parseInt('100',2)); // 4   设置2进制
+        console.log(parseInt('0x100')) // 256 如果没传进制 且以0x开头 当成16进制
+        console.log(parseInt('100.245')) // 100 去掉小数
+        console.log(parseInt('ab245')) //NaN 不以数字开头转换失败
+        console.log(0.1+0.2===0.3);   // false 浮点数无法做精确运算
+        console.log(parseFloat('34.56'))  //34.56
+        let num5 = 34.5678
+        console.log(num5.toFixed(2)) //'34.56' 保留两位小数
+        "100.2355677"
+        parseFloat("100.2355677").toFixed(2)
+</script>
+</body>
+</html>

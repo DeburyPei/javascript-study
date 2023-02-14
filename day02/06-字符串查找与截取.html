@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = "hello jirengu hello world"
+        console.log(str.indexOf('ll'));  // 2 返回 查找字符串位置  起始是0  
+        str.indexOf("safasfasf")        //  -1 找不到是 -1
+        str.lastIndexOf('o')       // 21  从后往前查找
+        str.includes('el')      // true  是否包含字串
+        str.startsWith('He')   // true 是否子串开头
+        str.endsWith('ld')    // true  是否子串结尾
+        
+        str.substr(1,3)   // ell   截取部分 参数从下标1 到3  [1,3]
+        str.substring(1,3)  // el    [1,3)
+
+        str.slice(0,-1)
+        // arrayObj.slice(start,end)
+
+        // arrayObj - 原始数组;
+        // start - 必填；设定新数组的起始位置；如果是负数，则表示从数组尾部开始算起（-1
+        // 指最后一个元素，-2 指倒数第二个元素，以此类推）。
+        // end - 可选；设定新数组的结束位置；如果不填写该参数，默认到数组结尾；如果是负数，则表示从数组尾部开始算起（-1 指最后一个元素，-2
+        // 指倒数第二个元素，以此类推）。
+
+        'abc'.split('')  // ['a', 'b', 'c'] 分割
+        ' abc '.trim()  // 'abc' 去掉两边的空白字符
+        ' abc '.trimLeft() // 'abc ' 去掉左边的空白字符
+        ' abc '.trimRight()// ' abc' 去掉右边的空白字符
+        'aBc'.toUpperCase()  //全大写
+        'Abc'.toLowerCase()
+        
+        
+        let link = '<a href="https://quiz.xiedaimala.com/quizzes/14/answerPapers"></a>'
+    </script>
+</body>
+</html>

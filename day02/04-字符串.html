@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str1 = "hello"
+       
+        console.log(`${str1} hello`);   // ``  是这个符号才可以使用 ${}
+        console.log(str1.length);    //5
+        console.log(str1[0]);    // 'h'
+        console.log(str1[str1.length-1]); // 'o'
+        str1.charAt(0)   // 'h'
+        str1.charCodeAt(0)  // 104   Unicode 值  将h 转换成 ascill 码
+
+        let str2 = "world"
+        // 字符串相加
+        console.log(`${str1} ${str2}`)
+        let str5 = str1.concat(str2)   
+        console.log(str5);
+    </script>
+</body>
+</html>
