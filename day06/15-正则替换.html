@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            'a1a2c3'.replace(/a(\d)/g,'A$1')
+            $1代表第一个分组  (\d1) 
+        */
+        let str = `let a = 1
+        let b = 2
+         console.log(a+b)
+        `
+        let str2 = str.replace(/(.) *\n/g, 
+        '$1;\n')
+        console.log(str2)
+    </script>
+</body>
+</html>

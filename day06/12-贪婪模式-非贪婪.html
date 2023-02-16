@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            '123456789'.match(/\d{3,5}/g)
+
+        
+        */
+       //贪婪模式 尽可能多的去匹配 {3，5} 如果能到5就匹配5个
+       let str = '123456789'
+       let reg1 = /\d{3,5}/g
+       console.log(str.match(reg1));  // ['12345','6789']
+
+      //非贪婪模式 只需要在量词后面加 ?  即可
+       let reg2 = /\d{3,5}?/g
+       console.log(str.match(reg2));  //  ['123', '456', '789']
+    </script>
+</body>
+</html>

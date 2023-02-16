@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Map对象是键值对的集合 map中的一个键只能出现一次 任何值都可作为键和值Map的
+
+
+            Object 和 Map 有什么区别 
+                - Map键 可以是任何类型   Object只能是字符串和Symbol
+                - Map的键是有序的 Object是无序的
+                - Map可以获取Size Object需要自己计算
+                - Map性能更好
+                - Map是可迭代的可用for of Object是不可迭代的 可用for in遍历
+        
+        */
+       let map = new Map()
+       map.set('name','jirengu')
+       map.set(1,100)
+       let obj = {a:1}
+       map.set(obj,2)
+        map.get('name')
+        map.get(obj)
+        map.delete('name')
+       map.forEach((val,key)=>console.log(val,key))
+       for(let [key,val] of map){
+            console.log(key,val)
+       }
+       map.size
+    </script>
+</body>
+</html>

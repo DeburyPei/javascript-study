@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            用于把匹配的部分拿出
+            注意 
+                match
+                matchAll
+                1、match返回值是一个数组，如果没有任何匹配项则返回null；
+                。matchAll返回迭代器，要想查看其结果需要遍历迭代器。
+
+                2、match匹配到第一个匹配项后即停止匹配；matchAll会匹配出字符串中所有的匹配项。
+
+1.对于match来说，如果正则表达式中有g修饰，结果返回所有与正则表达式匹配的字符串的列表。捕获项会被忽略！
+2.对于match来说，如果正则表达式中没有g修饰，结果除了返回第一个匹配外，还会列出其所有捕获项！
+3.对于matchAll来说，如果正则表达式有g修饰，其返回的迭代项是一个个的数组，
+数组中除了包含匹配的完整字符串和所有捕获项外，
+还包含有index、input、groups这三个属性，index表示当前匹配项在原字符串中的索引位置，
+input表示输入的原始字符串，groups是一个包含所以分组的对象。
+4.对于matchAll来说，如果正则表达式没有g修饰，其结果信息与第3点中描述的完全一致。
+但其迭代项只有一项，即首个匹配项。
+
+
+        */
+       const text = '图片的尺寸是1440x900'
+       const reg = /(\d+)x(\d+)/
+       const match = text.match(reg)  
+       // match[0]是字符串本身 '1440x900'  如果reg 加 g 全局就会直接成为数组 ['1440x900'] 
+       // match ['1440x900', '1440', '900', index: 6, input: '图片的尺寸是1440x900', groups: undefined]
+       console.log(match[1],match[2]);
+
+       let str2 = '图片的尺寸是1440x900 1441x901'
+       const reg2 = /(\d+)x(\d+)/g
+        let result = [...str2.matchAll(reg2)]  //[['1440x900', '1440', '900'],['1441x901', '1441', '901']] 
+       console.log(result);
+       [...str2.matchAll(reg2)].map(v=>({w:v[1],h:v[2]}))  // map 返回字典时候 要加小括号 ({})
+
+    //    [{w: '1440', h: '900'},{w: '1441', h: '901'}]
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //在正则上用
+        let reg = /hello/
+        reg.test('hello jiregu')
+        //在字符串上用
+        let str = 'hello1 jirengu, hello2 world'
+        str.search(/hello\d/)   // 0   匹配第一个位置
+        str.match(/hello\d/g)   // ['hello1', 'hello2']  寻找所有放在数组
+        str.replace(/hello\d/g,'hi')
+        str.split(/\s/)   //空格分割
+    </script>
+</body>
+</html>

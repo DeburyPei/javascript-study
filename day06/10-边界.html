@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            /^xyz/ 以xyz开头
+            /abc$/   以abc结尾
+
+            \b  主要匹配单词
+            /\babc\b/   匹配是单词的abc 左右两侧是字符串开头 结尾 中横线 空格
+            /\Babc\B/  匹配不是单词的abc 
+        
+        */
+       let str = "hello1 world hello2 123456 peiyuqing hello3"
+       str.match(/hello\d/g)   //  全局 ['hello1', 'hello2', 'hello3']
+       str.match(/^hello\d/g)  //['hello1']
+       str.match(/hello\d$/g)  //['hello3']
+
+       //匹配单词  wohello4rld 就匹配不到了
+       let str2 = "hello1 wohello4rld hello2 123456 peiyuqing hello3"
+       str2.match(/\bhello\d\b/g)  // ['hello1', 'hello2', 'hello3']
+       str2.match(/\Bhello\d\B/g)
+// ['hello4']
+
+    </script>
+</body>
+</html>

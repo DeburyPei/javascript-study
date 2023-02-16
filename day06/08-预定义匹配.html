@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            预定义匹配
+            大写都与小写相反
+                .   等价于[^\r\n] 匹配一个除回车和换行以外的任意字符
+                \d  等价于[0-9]匹配一个数字字符
+                \D  等价于[^0-9]匹配一个非数字字符
+                \s  等价于[空格\t\n\r\v\f] 匹配一个空白字符
+                \S  [^空格\t\n\r\v\f]
+                \w  等价于[a-zA-Z_0-9]  匹配一个字母 数字 下划线 
+                \W  [^a-zA-Z_0-9]  
+        */
+       let str = 'he-llo jirengu, hello world'
+       str.split(/\s/)   //(4) ['he-llo', 'jirengu,', 'hello', 'world']   将空格分割
+
+       let arr2 = str.split(/\W/).filter(v=>v!=='')  //['he', 'llo', 'jirengu', 'hello', 'world']
+       let str2 = str.replace(/\s/g,'')   //'he-llojirengu,helloworld' 
+    
+
+
+    </script>
+</body>
+</html>

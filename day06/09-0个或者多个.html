@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            ? 前面的字符出现0次或者1次
+            + 前面的字符出现一次或者多次
+            * 前面的字符出现0次或者多次
+            {n} 前面的字符出现n次
+            {n,m} 前面的字符出现n到m次
+            {n,}  前面的字符出现至少n次
+        
+        */
+        let reg1 = /\d{11}/  //  [0-9]{11}
+        console.log(reg1.test('1234567879'));
+        let reg2 = /\d{2,4}/
+        let str = "ggle gogle google gooogle goooogle gooooogle goooooogle gooooooogle goooooooogle"
+        console.log(str.match(/go*gle/g))  // 匹配0个或者多个['ggle', 'gogle', 'google', 'gooogle', 'goooogle', 'gooooogle', 'goooooogle', 'gooooooogle', 'goooooooogle']
+        
+    </script>
+</body>
+</html>

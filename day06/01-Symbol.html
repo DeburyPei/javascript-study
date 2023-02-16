@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Symbol
+                Js内置原始类型
+                每个Symbol都不相同
+
+        */
+       const sym1 = Symbol()
+       const sym2 = Symbol('foo')
+       const sym3 = Symbol('foo')
+       console.log(sym2 === sym3)  // false
+
+       let obj  = {[sym1]:'a'}
+       obj[sym2] = 'b'
+       console.log(obj[sym1]) // 'a'
+
+
+       obj[1] = 2  //其实 object 自动把1 转换成字符串 '1'
+
+       let obj2 = {a:1}   
+       obj[obj2] = 3    // 自动将 obj2转换成字符串   所以只要是object 都是3
+       let obj3 = {a:2}
+       obj[obj3] // 输出3    
+    //    {[object Object]: 3, Symbol(): 'a', Symbol(foo): 'b'}
+
+    //symbol就可以避免
+        obj[sym2] = 4
+        obj[sym3] = 5
+        //obj ===>>>> {[object Object]: 3, Symbol(): 'a', Symbol(foo): 4, Symbol(foo): 5}
+       
+       //例子2
+       let obj = {}
+       let a = 1
+       let b = true
+       let c = [1,2]  
+       let d = [2,4]
+       obj[a] = 1
+       obj[b] = 2
+       obj[c] = 3
+       obj[d] = 4
+        // obj ===>>>>{1: 1, true: 2, 1,2: 3, 2,4: 4}
+        obj[true] === obj['true']  //true
+
+       let e = {1:2}
+       let f ={1:23}
+       obj[e] = 3
+       obj[f] = 4
+        //依然转成字符串h
+       //{1: 1, true: 2, 1,2: 3, 2,4: 4, [object Object]: 4}
+
+       let g = Symbol({1:2})
+       let h =Symbol({1:23})
+       obj[g] = 3
+       obj[h] = 4
+        // {1: 1, true: 2, 1,2: 3, 2,4: 4, [object Object]:
+        //      4, Symbol([object Object]): 
+        //      3,Symbol([object Object]): 4}
+    </script>
+</body>
+</html>

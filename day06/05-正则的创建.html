@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            创建正则方式
+               
+                 // 字面量方式
+
+                构造函数方式创建
+
+                g：gobal            全文搜索 不添加就搜索到第一个停止搜索
+                i ingore case       忽略大小写
+                m multiple          多行搜索
+
+                中的加号【+】、乘号【*】在正则表达式的基础符号内，相当于关键字，我们都知道，关键字不能使用，我们只需要在关键字外部套一层【[]】中括号即可。
+
+
+
+        */
+        // 字面量方式
+        let reg = /[+]86\d{11}/g
+        reg.test("+8601234567891")  // true 
+
+        // 构造函数方式创建
+        let name = 'jirengu'
+        let reg1 = new RegExp('www.'+name+'.com','g')
+    </script>
+</body>
+</html>

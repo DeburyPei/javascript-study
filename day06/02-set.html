@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Set
+                set对象是值得集合 可以按照插入的顺序迭代它的元素
+                Set中的元素是唯一的
+
+            let set = new Set()
+            **set.add(val)
+            set.delete(val)
+            **set.has(val)
+            set.size()
+            set.clear()
+            set.forEach(callback)
+        */
+        let set = new Set()
+        set.add(1)
+        set.add(2)
+        console.log(set.has('red'))  // false
+        set.forEach(v=>{console.log(v)})
+        //对于可迭代对象 可以 使用 for of
+        for(let val of set) console.log(val);
+
+        //可迭代对象 转换成数组的方法 1 Array.from()  2. [...set]  set代标可迭代
+        [...set] //[{…}, 1, 2]
+
+        //通过set去重
+        let arr = [1,2,3,6,4,8,7,4,2,3,1]
+        console.log([...new Set(arr)]);
+
+    </script>
+</body>
+</html>
