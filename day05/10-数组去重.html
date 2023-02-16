@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //方法一 使用filter实现数组去重   这个值在数组中的位置等于这个下标
+        const remove = arr => arr.filter((val,index)=>arr.indexOf(val)===index)
+       //0 0 2 2 5 6 6 7 8 9 9
+        [1,1,2,2,3,4,4,5,6,7,7]
+        remove([1,1,2,2,3,4,4,5,6,7,7])
+        //方法二 在原数组上操作
+        const remove2 = arr =>{
+            let hash = {}
+            for(let i=0;i<arr.length;i++){
+                if(!hash[arr[i]]){
+                    hash[arr[i]] = true
+                }else{
+                    arr.splice(i,1)
+                    i--
+                }
+            }
+        }
+        //方法二的弊端 只对于数字 不对于其他 比如字符串
+        const arr1 = [3,true,"true",4,1,1]  // 方法二无法识别
+        const remove3 = arr =>{
+            let hash = new Set()
+            for(let i=0;i<arr.length;i++){
+                if(!set.has(arr[i])){
+                    set.add(arr[i])
+                }else{
+                    arr.splice(i,1)
+                    i--
+                }
+            }
+        }
+
+
+    </script>
+</body>
+</html>

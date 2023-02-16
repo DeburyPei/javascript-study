@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+           arr.filter(callback) 过滤出满足条件的元素 构成新数组
+           arr.reduce(function(temp,v),initValue)
+                -遍历数组 调用回调函数 将数组元素组合成一个值
+                -初始值可选 
+        */
+       let arr = [4,-2,-1,9]
+       let arr1 = arr.filter(val => val > 0)
+       console.log(arr);    //原数组不变
+       console.log(arr1)   // 过滤出来符合条件的 [4,9]
+       
+       //经过很复杂的操作 最终变成一个值用 reduce   参数  第一个 sum 返回值 v是value 数组中的值 遍历
+       arr = [4,-2,-1,9]
+       let result = arr.reduce((sum,v)=> sum + v,0)   // 10   初始值为 0 
+       result = arr.reduce((sum,v)=> sum + v**2 ,0)// 102
+
+
+
+       /*reduce 练习*/
+        arr = ['a', 'b', 'c', 'd', 'e']
+       arr.reduce((sum,v)=>sum+v,'')   // abcde
+        //或者
+        arr.reduce((sum,v)=>sum+v)
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            concat 
+                -既能把数字拼接到数组
+                -也能把数组拼接到数组
+                -需要创建新数组 原数组不变
+            join  把数组拼接为字符串
+                常常通过split把字符串转数组 
+                是用数组api操作后 再通join连成字符串
+
+        */
+        let arr = [4,5,6]
+        let arr2 = arr.concat(7)  //返回新数组 旧数组不变
+        console.log(arr2)
+        let arr3 = arr.concat([8,9])
+        console.log(arr3);
+
+        let str = "jirengu"
+        let arr4 = str.split('')
+        console.log(arr4.join(''));
+        arr4.join('-')   //每个之间一个 -
+
+    </script>
+</body>
+</html>

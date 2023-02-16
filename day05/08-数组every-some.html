@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            arr.every(callback)
+                所有回调函数都返回true的时候结果才会返回true 否则返回false
+            
+            arr.some(fallback)
+               只要有一个回调函数都返回true的时候结果就会返回true 否则返回false
+        
+        */
+       let arr = [1,10,30]
+       console.log(arr.some(v=>v>11));
+       console.log(arr.every(v=>v>11));
+
+    </script>
+
+</body>
+</html>

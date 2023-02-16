@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            pop 从栈尾弹出一个
+            push 从栈尾推入
+
+            unshift 从队头推入
+            shift 从队头移出
+        */
+        let arr = [3,4,'hello',true,8]
+        arr.pop()  // 8  返回8   [3, 4, 'hello', true]
+        arr.push(9) // 返回数组长度 5    [3, 4, 'hello', true, 9]
+
+        arr.unshift(100)   // 返回数组长度 6  队头   [100, 3, 4, 'hello', true, 9]
+        arr.shift()    //返回100  返回移出的内容   [3, 4, 'hello', true, 9]
+
+
+        arr.unshift(100,5,6,7)   //[100, 5, 6, 7, 3, 4, 'hello', true, 9]
+        arr.unshift([1,2,3])   // [Array(3)->[1,2,3], 100, 5, 6, 7, 3, 4, 'hello', true, 9]
+        //3个点是为了去掉中括号
+        arr.unshift(...[1,2,3])  //[1, 2, 3, Array(3), 100, 5, 6, 7, 3, 4, 'hello', true, 9]
+        arr.push(9,8,7,6) //同理
+    </script>
+</body>
+</html>

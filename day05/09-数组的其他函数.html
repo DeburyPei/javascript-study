@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Array.isArray(arr)
+                判断arr是否是数组
+            arr.indexOf(val)
+                获取val在数组中的位置 找不到是-1
+            Array(len)
+                创建一个长度为len的空属性数组
+            arr.fill(val)
+                把arr全部填充为val
+            Array.from(arrayLike)
+                把类数组对象变成数组
+            [...arrayLike] 
+                把类数组对象变成数组  如果放在句子前需要上一个语句加 分号 ; 否则报错
+        */  
+        let str = {}
+       
+        Array.isArray(str)
+        // false
+        Array.isArray([1,2,3])
+        // true
+        [3,4,5].indexOf(4)
+        // 1
+        [3,4,5].indexOf(6)
+        // -1
+        [3,4,5].includes()
+        // false
+        [3,4,5].includes(6)
+        // false
+        [3,4,5].includes(5)
+        // true
+        Array(2)
+        // (2) [空属性 × 2]
+        Array(10).fill(3)
+        // (10) [3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+        Array(10).fill(0).map((v,i)=>i)
+        // (10) [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        Array(10).fill(0).map((v,i)=>i).reduce((sum,v)=>sum+v,0)
+        // 45
+
+        //类数组 let obj = {0:3,1:4,length:2}  有 0 1 2 3 当作key value自己填写 同时还有length 
+        let obj = {0:3,1:4,length:2}
+        Array.from(obj);
+        // (2) [3, 4]   3对应下标0 也就是obj的key 0
+        //等价于   上一个语句要加分号 ;
+        [...obj];  // 错误 [...]必须是可迭代对象
+        [...Array(2)] ;//等价于  Array(2).fill()  [undefined, undefined]
+        [...Array(10)].map((v,i)=>i)
+
+        //随机生成颜色
+        "#"+[...Array(6)].map(v=>'0123456789abcdef'[Math.floor(Math.random()*16)]).join('')
+
+    </script>
+</body>
+</html>

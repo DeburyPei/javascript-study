@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*  
+          如果操作 操作的是原数组
+        arr.forEach(callback) 数组的每一项都交给callback函数操作   
+            callback
+                -参数
+                    val--遍历到对应的元素
+                    index--元素序号
+                    array--数组本身
+                    //////////////////////////////////////////////////
+                    self：数组当前遍历的元素，默认从左往右依次获取数组元素。
+                    index：数组当前元素的索引，第一个元素索引为0，依次类推。
+                    arr：当前遍历的数组。
+                    this：回调函数中this指向。
+        生成新数组
+        arr.map(callback)数组的每一项都交给callback函数操作 callback返回值组成新数组
+                    原数组不变
+                    callback参数为
+                        遍历到对应数组
+                        元素序号
+                        数组本身
+        */
+       let arr = [1,4,2]
+       arr.forEach(function(val){
+            console.log(val);
+       })
+       arr.forEach(function(val,index,array){
+         array[index] = val ** 2
+       })
+       arr.forEach(val => {console.log(val**2);})
+
+
+       let arr1 = arr.map(v => v**2)
+       console.log(arr1);
+
+    </script>
+</body>
+</html>

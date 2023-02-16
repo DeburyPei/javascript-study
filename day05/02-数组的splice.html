@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            splice  切片吧
+            任意位置添加 删除
+                参数 1 开始索引
+                     2 删除元素的个数
+                     3 插入的新元素 可以写多个
+
+            注意 
+                splice 是在原数组上操作 数组长度往往会发生变化
+                splice 返回删除的元素  然后原数组 少掉删除的元素
+        */
+        let arr = [3,4,'hello',true,8]
+        arr.splice(1,2) // [4,'hello']
+        console.log(arr) //[3, true, 8]
+
+        arr.splice(2,0,"yes")  //添加元素无删除  返回 []
+        console.log(arr) //[3, 4, 'yes', 'hello', true, 8]
+
+        arr.splice(2,4,1,2,3,4) //   ['yes', 'hello', true, 8]
+        arr  //[3, 4, 1, 2, 3, 4]
+
+        
+    </script>
+</body>
+</html>
