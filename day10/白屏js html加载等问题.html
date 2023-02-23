@@ -1,0 +1,69 @@
+<!--    
+    解析Html 标签 构建DOM树 
+    解析css标签 构建CSSOM树
+    把DOM和CSSOM组合成渲染树 render tree
+    在渲染树的基础上进行布局 计算每个节点的几何架构
+    把每个节点绘制到屏幕上
+
+    js的加载
+        遇到script标签 如果有src发请求获取js 执行js完毕后在解析后续标签
+        js的加载和执行会阻塞后续标签的解析
+            所谓阻塞解析指影响Dom树的构建 因为js里面有个document.write 可以在对应位置构建DOM
+            如果不等js执行完就构建好dom树 那么document.write 就没法在当前位置插入
+        
+        页面中多个js 
+            并行下载顺序执行 页面中的个js回并行加载 只要js加载完成后立马执行 
+            但是如果某个js如果已经下载完成 那么他必须等到前一个js下载执行完之后才能执行
+        建议把引入js文件放置在body内部i的末尾 以便让dom尽快展现 同时方便js操作dom
+    
+    css的加载
+        遇到link标签 会发请求获取css 同时不影响后续标签的解析
+        css的加载不阻塞解析 但会阻塞渲染
+            不阻塞解析指不影响dom树的构建 阻塞渲染时因为css未加载完成 
+            导致cssom树为构建完成 从而无法构建渲染树一直处于摆平状态
+            所谓白屏是指页面内容展现前的一片空白
+        建议把引入css为文件放置在head标签内 尽可能早的加载css
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="1s.js"></script>
+    <script src="10s.js"></script>
+
+</head>
+<body>
+    <!-- 10s 白屏 -->
+    <!-- 10s 全部才可以操作 -->
+    <h1>hello</h1>
+    <link rel="stylesheet" href="1s.css">
+    <link rel="stylesheet" href="5s.css">
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="1s.css">
+    <link rel="stylesheet" href="5s.css">
+
+</head>
+<body>
+     <!-- 5s 白屏 -->
+    <!-- 10s 全部才可以操作 -->
+    <h1>hello</h1>
+   
+    <script src="1s.js"></script>
+    <script src="10s.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        cookie
+            存储在浏览器上的一小段数据 用来记录某些当页面关闭或者刷新后任然需要记录的信息
+
+            可以用js在浏览器直接设置 用于记录不名骨干信息 如用户名
+                也可以在服务端同时用http协议规定的set-cookie来让浏览器种下cookie这是最常用的做法
+            
+            每次网络请求request headers 中都会带上cookie 所以如果cookie太多太大对传输效率会有影响
+
+            最大容量为4k 有过期的时间
+
+        cookie参数
+            path 表示 cookie影响到的路径 匹配该路径才发送这个cookie
+            expires和maxAge 告诉浏览器cookie时候过期   maxAge 是cookie 多久后过期的相对时间 
+            secure 党secure 值为true时 cookie在http中是无效 在https中才有效
+            httpOnly 浏览器不允许脚本操作 document.cookie 去更改cookie 一般情况下都应该设置这个为true
+                    这样可以避免xss攻击拿到cookie
+     -->
+</body>
+</html>

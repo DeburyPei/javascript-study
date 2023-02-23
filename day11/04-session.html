@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        1.用户在输入用户名密码提交给服务端 服务端验证通过后回创建一个session对象用于记录用户的相关信息
+            这个session可保存在服务器内存中 也可保存在数据库中
+        2.创建session后 会把关联的session_id 通过setCookie 添加到http响应头中
+        3.浏览器在加载页面是发现响应头部有set-cookie 字段 就把这个cookie种到浏览器指定域名下
+        4.当下次刷新页面时 发送的请求会带上这条cookie 服务端在接收到后根据这个session_id来识别用户
+        5.cookie是存储在浏览器里的一小段 数据 而 session是服务器用来识别身份的一段数据库 
+            有时候也特指身份识别机制
+
+     -->
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        localStorage
+            - 用于将大量数据 最大5M 保存在浏览器中
+            - 保存后数据永不过期 除非用js 手动清除
+            - 不参与网络传输
+     -->
+     <script>
+        // 存入 key是 detail  value 是 information  JSON.stringify（）  json格式转化成字符串
+        // 以下三种存入的方式
+        let information = {name:'hunger',friends:['bob','alice']}
+        localStorage.detail = JSON.stringify(information)
+
+        localStorage['fuck'] = 20
+
+        localStorage.setItem('sex','male')
+
+        // 删除 与 获取
+        localStorage.removeItem('sex')
+        console.log(localStorage.getItem('age'))
+
+        // Json JSON.stringify（）  json格式转化成字符串 JSON.parse 字符串 转json
+        let oldInfo = JSON.parse(localStorage.detail)
+        oldInfo.friends.push('David')
+        localStorage.detail = JSON.stringify(oldInfo)
+        
+
+     </script>
+</body>
+</html>

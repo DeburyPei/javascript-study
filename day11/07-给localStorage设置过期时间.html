@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 函数封装对象
+        /*  
+            let obj = {
+                a:1,
+                fn:function(){
+                    console.log(1)
+                }
+            }
+
+            let obj = {
+                a:1,
+                foo(){
+
+                },
+                fn(){
+                    console.log(1)
+                }
+            }
+        
+        
+        */
+        const Storage = {
+            set(key,value,seconds){
+                let data = {value}
+                if(seconds !== undefined){
+                    data.expires = Date.now()+seconds*1000
+                }
+                localStorage.setItem(key,JSON.stringify(data))
+            },
+            get(key){
+                let text = localStorage.getItem(key)
+                if(text){
+                    let json = JSON.parse(text)
+                    if(json.expires === undefined || Date.now() <= json.expires){
+                        return json.value
+                    }
+                    localStorage.removeItem(key)
+                }
+            },
+            remove(key){
+                localStorage.removeItem(key)
+            }
+        }
+        Storage.set('name','peiyuqing')
+        Storage.set('sex','male',3) // 有效期3s
+        console.log(Storage.get('sex'))
+        setTimeout(function(){
+             console.log(Storage.get('sex'))
+
+        },4000)  // 4000 毫秒
+        
+    </script>
+</body>
+</html>
