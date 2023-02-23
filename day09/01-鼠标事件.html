@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        click 
+        dbclick      双击
+        mousedown      单击按下
+        mouseup      单击松开   按下后松开触发click
+        contextmenu  事件在元素中用户   右击鼠标时触发   并打开上下文菜单。 
+     -->
+     <button class="click">click</button>
+     <button class="dbclick">dbclick</button>
+     <button class="mouse">mouseup down click</button>
+     <div class="contextmenu">contextmenu</div>
+    <script>
+        const $ = s=>document.querySelector(s)
+        $('.click').onclick = function (e){
+            console.log(e.clientX,e.clientY);   // 整个窗口得 x y
+            console.log(e.ctrlKey,e.metaKey)    // 是否按下ctrl 键
+                                                //  screenX screenY  整个显示屏得位置
+        }
+        $('.dbclick').onclick = function(e){
+            console.log('双击');
+        }
+        $('.mouse').onmousedown = function (e) {
+            console.log('mouse down')
+            
+        }
+        $('.mouse').onmouseup = function (e) {
+            console.log('mouse up')
+            
+        }
+        $('.mouse').onclick = function (e) {
+            console.log('mouse click')
+            
+        }
+
+        $('.contextmenu').oncontextmenu = function (e) {
+            console.log('contextmenu')
+            e.preventDefault() //禁用右键菜单
+            
+        }
+        document.body.oncontextmenu = function(e){
+            console.log('contextmenu111')
+
+            e.preventDefault()
+        }
+    </script>
+</body>
+</html>

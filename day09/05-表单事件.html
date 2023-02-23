@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text"><span class="log"></span>
+    <script>
+        /*
+            blur 失去焦点
+            foucs 获得焦点时
+        */
+       const $input = document.querySelector('input')
+       const $log = document.querySelector('.log')
+       $input.onfocus = function(){
+            
+            $log.innerText = "获取焦点"
+       }
+       $input.onblur = function(){
+            $log.innerText ="失去焦点"
+       }
+
+        /*
+            change 表单内容改变且失去焦点
+            input 每次键盘输入内容时
+        */
+    </script>
+</body>
+</html>

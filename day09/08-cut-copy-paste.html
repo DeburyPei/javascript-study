@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .wrap{display: flex;height: 100px;}
+        textarea{width: 50%;}
+        .preview{width: 50%;background-color: lightgrey;}
+    </style>
+    <div class="wrap">
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <div class="preview">ddd</div>
+        
+    </div>
+    <span></span>
+    <script>
+        /*
+            cut copy paste
+
+            document.getSelection()  获取选中内容
+            event.clipboardData.getData('text/plain')  获取剪切板内容
+
+        */
+       const $ = s =>document.querySelector(s)
+       $('.preview').onpaste = function(event){
+            let text = event.clipboardData.getData('text/plain')
+            console.log(text)
+            this.innerText = text
+            event.preventDefault()     
+       }
+       $('textarea').oncopy = function(event){
+        console.log(event.type + '-' + document.getSelection())
+       $('span').innerText = document.getSelection()
+        
+       }
+    </script>
+</body>
+</html>

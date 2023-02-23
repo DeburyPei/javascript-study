@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简易安全键盘</title>
+    <style>
+        .status span{
+            border: 1px solid #000;
+
+        }
+        .active{
+            color: #fff;
+            background-color: #000;
+        }
+        .text{padding:1px;border: 1px solid #ccc;
+            background-color: black;
+            min-height: 100px;
+            color:#fff;    
+        }
+        .text::after{
+            position: relative;
+            top: 2px;
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 12px;
+            background-color: #fff;
+            margin-left: 4px;
+            animation: blink .8s infinite;
+        }
+        @keyframes blink{
+            0%{
+                opacity: 1;
+            }
+            50%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="status">
+        <span class="ctrl">ctrl</span>
+        <span class="meta">command</span>
+    </div>
+    <!-- pre元素，可定义预格式化的文本。在pre元素中的文本会保留空格和换行符。文本显现为等宽字体。 -->
+    <pre class="text"></pre>  
+    <script>
+        const $ = s => document.querySelector(s)
+        document.addEventListener('keydown',function(e){
+            e.preventDefault()  // 阻止舒服 crtl+s 变成了保存
+            console.log(e.key,e.keyCode)
+            switch(e.key){
+                case 'Backspace':
+                    $('.text').innerText = $('.text').innerText.slice(0,-1)
+                    break
+                case 'Enter':
+                    $('.text').append('\n')
+                    break
+                default:
+                // var user;  //定义变量
+                // (! user && console.log("没有赋值"));  //返回提示信息“没有赋值”
+                // 等效于：
+                // var user;  //定义变量
+                // if (! user){  //条件判断
+                //     console.log("变量没有赋值");
+                // }
+                    e.key.length === 1 && $('.text').append(e.key)
+                    e.ctrlKey && $('.ctrl').classList.add('active')
+                    e.altKey && $('.meta').classList.add('active')
+                    break;
+
+            }
+            
+        })
+        document.addEventListener('keyup',function(){
+            $('.ctrl').classList.remove('active')
+            $('.meta').classList.remove('active')
+        })
+
+    </script>
+</body>
+</html>

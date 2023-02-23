@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        加载事件
+            DOMContentLoaded 
+                dom结构解析完成
+            window.onload
+                所有资源加载完成
+            img.onload
+                图片加载后获取宽度
+     -->
+     <script>
+          const $ = s =>document.querySelector(s)
+        // console.log( $('img').width) // 报错因为没加载
+        //
+        $('img').onload = function(){    // 放在上面会报错没有加载成功
+            console.log(this.width);
+        }
+     </script>
+    <h1>hello</h1>
+    <img src="C:\Users\Administrator\Desktop\rYSC7oFo_400x400.jpg" alt="">
+
+    <script>
+        window.onload = function(){
+            console.log('window加载完成')
+            
+        }
+        document.addEventListener('DOMContentLoaded',function(){
+            console.log('DOM加载完成')
+
+           document.querySelector('h1').onclick = function(){
+                alert(1)
+           }
+        })
+        // 无法更新 这个不支持
+        // document.onDOMContentLoaded = function(){
+        //         alert(1)
+        //    }
+      
+    </script>
+</body>
+</html>

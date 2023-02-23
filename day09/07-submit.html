@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/login">
+        <input class="username" type="text">
+        <div class="msg"></div>
+        <button>提交</button>
+
+    </form>
+    <script>
+        const $ = s =>document.querySelector(s)
+        $('form').addEventListener('submit',function(e){
+            e.preventDefault()
+            if(/^\w{6,12}$/.test($('.username').value)){
+                $('form').submit()
+                $('form .msg').innerText = ''
+            }else{
+                $('form .msg').innerText = 'Error'
+
+            }
+        })
+    </script>
+</body>
+</html>
