@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        事件对象包含
+            事件来源e.target
+            事件的位置
+            按了哪个键
+        事件绑定时
+            普通函数里的this 代标 . 前面的对象
+            **箭头函数里面的this代表外面的this
+     -->
+     <div class="btn">Click me</div>
+     <script>
+        const $btn = document.querySelector('.btn')
+        $btn.onclick = function(evt){
+            console.log(evt);
+            console.log(this);
+        }
+        $btn.addEventListener('click',function(evt){
+            console.log(evt);
+            console.log(this);
+        })
+        $btn.onclick = evt=>{
+            console.log(evt);
+            console.log(this);  // this 代表 函数外面的this 此处为 window
+        }
+        $btn.addEventListener('click',()=>{
+            console.log(this);  // this 代表 函数外面的this 此处为 window
+        })
+     </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        li{
+            border: 1px solid #000;
+            padding: 10px;
+            list-style: none;
+        }
+    </style>
+    <ul class="wrap">
+        <li>
+            <span class="text">abc</span>
+            <button class="del">删除</button>
+        </li>
+    </ul>
+    <footer>
+        <input type="text" name="" id=""><button class="add">添加</button>
+    </footer>
+   <script>
+        const $ = s => document.querySelector(s)
+        const $$ = s => document.querySelectorAll(s)
+
+        
+        $('.add').onclick = function(){
+            const $text = document.createElement('span')
+            $text.append($('input').value)
+            $text.classList.add('text')
+            const $del = document.createElement('button')
+            $del.append('删除')
+            $del.classList.add('del')
+            const $li = document.createElement('li')
+            $li.append($text,$del)
+            $('.wrap').append($li)
+        }
+       $('.wrap').onclick = function(e){
+            
+            const $target = e.path.find($node=>$node.classList&&$node.classList.contains('del'))
+            console.log($target);   // <button class="del">删除</button>
+            if($target){
+                $target.parentElement.remove() 
+            }
+       }
+   </script>
+</body>
+</html>

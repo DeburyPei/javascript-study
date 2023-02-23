@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        方法
+            1. node.onclick = function(){...}
+            2. node.addEventListener('click',function(){...})
+            3.   <div onclick="SayHello()">Sayhello</div>   废弃
+
+        区别
+            onclick 绑定是赋值 多次相同赋值会覆盖 只有最后一次生效
+            addEventListener 是函数执行 可执行 绑定多次 且功能更强大
+     -->
+    <button>Click Me</button>
+    <div onclick="SayHello()">Sayhello</div>
+    <script>
+        const $btn = document.querySelector('button')
+        $btn.onclick = function(){
+            console.log(1);
+        }
+        $btn.onclick = function(){
+            console.log(11);
+        }
+        $btn.addEventListener('click',function(){
+            console.log(2);
+        })
+        $btn.addEventListener('click',function(){
+            console.log(22);
+        })
+        function SayHello(){
+            console.log('hello');
+        }
+    </script>
+</body>
+</html>

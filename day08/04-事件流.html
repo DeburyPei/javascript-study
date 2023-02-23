@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        *{border: 1px solid red;padding: 10px;}
+    </style>
+    <div class="box">box</div>
+    <script>
+        const levels = ['none','capturing','target','bubbling']
+        window.addEventListener('click',e=>{
+            console.log('window: '+levels[e.eventPhase]);
+            console.log(e.path)
+        },false)  //false 冒泡 true 捕获
+        document.addEventListener('click',e=>{
+            console.log('document: '+levels[e.eventPhase]);
+            
+            // e.stopPropagation() // 停止事件传递
+        },false)  //false 冒泡 true 捕获
+
+
+        window.addEventListener('click',e=>{
+            console.log('window: '+levels[e.eventPhase]);
+            // console.log(e.path)
+        },true)  //false 冒泡 true 捕获
+        document.addEventListener('click',e=>{
+            console.log('document: '+levels[e.eventPhase]);
+            
+            e.stopPropagation() // 停止事件传递
+        },true)  //false 冒泡 true 捕获
+
+        document.querySelector('.box').addEventListener('click',e=>{
+            console.log('.box: '+levels[e.eventPhase]);
+        })// 默认冒泡
+    </script>
+</body>
+</html>

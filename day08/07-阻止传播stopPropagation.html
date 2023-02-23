@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .detail{
+            position: absolute;
+            background-color: lightcyan;
+            padding: 10px;
+            transform: translateX(-100px);
+            opacity: 0;
+            transition: all .3s;
+        }
+        .detail.show{
+            opacity: 1;
+            transform:translateX(0);
+        }
+    </style>
+    <button class="open">打开</button>
+    <div class="detail">详细介绍
+      
+    </div>
+    <script>
+        // e.stopPropagation()  ('.detail').classList.remove('show')
+        const $ = s => document.querySelector(s)
+        // 以下错误是因为 document 在冒泡的时候就移除 show 所以 点击没有反应
+        /*
+        $('.open').onclick = (e) =>{
+            $('.detail').classList.add('show')
+        }
+        document.onclick = (e) =>{
+            $('.detail').classList.remove('show')
+        }*/
+        $('.open').onclick = (e) =>{
+            $('.detail').classList.add('show')
+            e.stopPropagation()  
+        }
+        document.onclick = (e) =>{
+            $('.detail').classList.remove('show')
+        }
+        $('detail').onclick = (e) =>{
+            e.stopPropagation()
+        }
+    </script>
+</body>
+</html>

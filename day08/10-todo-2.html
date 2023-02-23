@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        li{
+            border: 1px solid #000;
+            padding: 10px;
+        }
+    </style>
+    <ul class="wrap">
+        <li>
+            <span class="text">abc</span>
+            <button class="del">删除</button>
+        </li>
+    </ul>
+    <footer>
+        <input type="text" name="" id=""><button class="add">添加</button>
+    </footer>
+    <script>
+        const $ = s => document.querySelector(s)
+        const $$ = s => document.querySelectorAll(s)
+
+        $('.add').onclick = function(){
+           const $text = document.createElement('span')      
+           $text.classList.add('text') 
+           $text.append($('input').value)
+           const $button = document.createElement('button')  
+           $button.classList.add('del') 
+           $button.append('删除')
+        //    $button.onclick=function(){
+        //         let $parent = this.parentElement  // 获取li
+        //         $parent.remove()
+        //    }
+           const $li = document.createElement('li') 
+           $li.append($text,$button) 
+           $('.wrap').append($li)
+        }
+        // $('.wrap').onclick = function(e){
+        //             let $parent = e.target.parentElement  // 获取li
+        //         $parent.remove()
+        // }
+        
+        $('.wrap').onclick = function(e){
+            /*
+            find() 方法为数组中的每个元素都调用一次函数执行：  返回第一个符合条件的
+
+                当数组中的元素在测试条件时返回 true 时, find() 返回符合条件的元素，之后的值不会再调用执行函数。
+                如果没有符合条件的元素返回 undefined
+            */
+        //    let $target = e.path.find($node => $node.tagName === 'LI')
+        //    if($target){
+        //     $target.remove()
+        //    }
+            let $target = e.path.find($node => $node.classList&&$node.classList.contains('del'))
+            console.log($target)
+            if($target){
+                
+                $target.parentElement.remove()
+            }
+            
+                // if(e.path.includes('del')){
+                //     let $parent = e.target.parentElement  // 获取li
+                //  $parent.remove()
+                // }
+                   
+        }
+    </script>
+</body>
+</html>

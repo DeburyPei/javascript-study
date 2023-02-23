@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        *{border: 1px solid red;padding: 10px;}
+    </style>
+    <div class="box">box</div>
+    <script>
+        //    this 是 .addEventListener 前面的对象
+        //    e.target 代表点击的对象
+        document.addEventListener('click',function(e){
+            console.log('document .box')
+            console.log(this);  //document
+            console.log(e.target);  // .box
+        })
+        document.querySelector('.box').addEventListener('click',function(e){
+            console.log('in .box')
+            console.log(this);// .box
+            console.log(e.target);// .box
+        })
+    </script>
+</body>
+</html>

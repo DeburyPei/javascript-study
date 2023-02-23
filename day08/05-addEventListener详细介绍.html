@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        target.addEventListener(type,listener,useCapture)
+            - type 事件类型
+            - listener 事件处理方法
+            - useCapture 可选 默认false ture表示再捕获阶段调用listener false表示在冒泡阶段
+        
+        target.addEventListener(type,listener,options)
+            - options 可选
+                {capture:是否捕获阶段监听 once:是否监听一次 passive是否忽略preventDefault 提升移动端性能}
+        
+        target.removeEventListener  移除
+             target.removeEventListener('click',handle)
+        
+     -->
+     <button class="btn-each">each</button>
+     <button class="btn-once">once</button>
+
+     <script>
+        document.querySelector('.btn-each').addEventListener('click',()=>{
+            console.log('每次都响应')
+            
+        })
+        document.querySelector('.btn-once').addEventListener('click',()=>{
+            console.log('只响应一次')
+            
+        },{once:true})
+     </script>
+
+</body>
+</html>
