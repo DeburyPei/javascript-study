@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*实现两个Dom 元素互换位置*/
+        //  1 x pre 2   1 pre 2 x   pre 2 1 x    2 next 1 x   2 next x 1
+        // 分两个步骤 一个是2前面有元素 一个是2前面没有 后面有
+        function swap($node1,$node2){
+            if($node2.previousSibling){
+                let $pre = $node2.previousSibing
+                $node1.before($node2)
+                $node1.after($pre)
+
+            }else if($node2.nextSibling){
+                let $next = $node2.nextSibling
+                $node1.after($node2)
+                $node1.before($next)
+            }
+        }
+    </script>
+</body>
+</html>

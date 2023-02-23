@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>button</button>
+    <script>
+        const $ = s => document.querySelector(s)
+
+        /*  
+
+             ** node.getAttribute('id')             获取属性
+             ** node.setAttribute('data-id','100') 设置属性 
+             node.removeAttribute('checked')        删除属性
+             document.createAttribute('checked')    创建属性节点
+             node.setAttributeNode(attrNode)       设置属性节点
+        
+        */
+       $('button').onclick = function(){
+            let $link = document.createElement('a')
+            $link.setAttribute('href',"https://jirengu.com/")
+            $link.setAttribute("target","_blank")
+            $link.click()
+       }
+      
+    </script>
+</body>
+</html>

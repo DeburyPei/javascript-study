@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">box</div>
+    <script>
+        /*
+            尽量少用js操作style属性
+
+            尽量通过js操作class来修改样式 class 写好css样式 然后 js添加class即可
+        
+        */
+        const $box = document.querySelector('.box')
+        $box.style.color = 'red'
+        $box.style.fontSize = '12px'
+
+        let fontSize = getComputedStyle($box).fontSize
+        let height = getComputedStyle($box).height
+        console.log(parseFloat(height));
+
+    </script>
+</body>
+</html>

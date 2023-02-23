@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="old">old</div>
+    <div class="new">new</div>
+    <script>
+        // //在$reference之前插入新节点或文本
+        // $reference.before($node1,$node2,...)
+        // //在$reference元素之后插入新节点或者文本
+        // $reference.after($node1,$node2,...)
+        // //替换
+        // $old.replaceWith($new)
+        // //把$old节点删除
+        // $old.remove()
+
+        const $ = s => document.querySelector(s)
+        // $('.old').before($('.new'))
+        $('.new').after($('.old'))
+        // $('.old').replaceWith("hello")
+
+        $('.old').remove()
+
+
+
+    </script>
+</body>
+</html>

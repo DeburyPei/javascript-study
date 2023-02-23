@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="old">old</div>
+    <div class="new">new</div>
+    <script>
+        const $ = s => document.querySelector(s)
+
+        $('.old').classList.add('active')
+        $('.old').classList.add('box')
+        $('.old').classList.remove('box')
+        $('.old').classList.contains('active')  // true  判断是否包含
+
+        // toggle  如果有box 类就删除 没有就添加     切换
+        $('.old').classList.toggle('box')
+    </script>
+</body>
+</html>

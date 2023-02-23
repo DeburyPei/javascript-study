@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="a" class="box box1">
+        box1
+        <span>span1</span>
+        <span>span2</span>
+        <span>span3</span>
+    </div>
+    <button>add</button>
+    <div class="box2">box1</div>
+    <div class="box3">box2</div>
+    <script>
+        //**创建DOM节点 参数是标签名
+       document.createElement('div')
+       //创建文本节点参数是字符串
+       document.createTextNode("hello")
+       //创建一个虚拟的DOM作为容器 避免高频DOM操作 理论上用于提升性能
+       document.createDocumentFragment()
+       //把$child节点放到$parent节点内部的尾部   $child只能是DOM节点 不能是字符串 该方法老旧 推荐用 $parent.append()
+       $parent.appendChild($child)
+        //**在 $parent内部尾部追加DOM节点或字符串
+       $parent.append()
+       //在 $parent开头追加DOM节点或字符串
+       $parent.prepend()
+       //修改$node内的HTML内容
+       //禁止使用拼接HTML字符串 设置innerHTML的形式创建dom易引发xss漏洞
+       $node.innerHTML = "<div>xx</div>"
+        //设置的内容会作为$node内的文本 安全 可随意使用
+        $node.innerText = 'hello'
+
+        
+    </script>
+     <script>
+        const $ = s => document.querySelector(s)
+
+        $('button').onclick = function(){
+            // 老方法
+            // let $node = document.createElement('div')
+            // let $text = document.createTextNode("hello")
+            // //把text 塞进node里面
+            // $node.appendChild($text)
+            // //再把node赛在box3里面
+            // $('.box3').appendChild($node)
+
+            // 新方法
+            // let $node = document.createElement('div')
+            // $node.append('hello')
+            // $('.box3').append($node)
+
+            for(let i=0;i<10;i++){
+                 let $node = document.createElement('div')
+                $node.append('hello')
+                $('.box3').append($node)
+
+            }
+
+            //现在已经速度不如 上面原始的写法了  虽然只执行一次 append
+            let fragment = document.createDocumentFragment()
+            for(let i=0;i<10;i++){
+                 let $node = document.createElement('div')
+                $node.append('hello')
+                fragment.append($node)
+
+            }
+            $('.box3').append(fragment)
+        }
+    </script>
+</body>
+</html>

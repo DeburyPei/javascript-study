@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">box1</div>
+    <div class="box">box2</div>
+    <script>
+        //   NodeList可以直接遍历
+        document.querySelectorAll('.box').forEach(node=>{
+            console.log(node.className);
+        })
+        
+        //HTMLCollection需要转换为数组才能用forEach  老版
+        Array.from(document.getElementsByClassName('.box')).forEach(
+            node=>{
+            console.log(node.className);
+            }
+        );
+        [...document.getElementsByClassName('.box')].forEach(
+            node=>{
+            console.log(node.className);
+            }
+        );
+        //二者都可用for of遍历 只要是可迭代对象
+        let $$boxes = document.querySelectorAll('.box')
+        for(let node of document.getElementsByClassName('box')){
+            console.log(node.className);
+
+        }
+       
+    </script>
+</body>
+</html>

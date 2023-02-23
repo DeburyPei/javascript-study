@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            1.不止document.querySelector
+            任何DOM元素都有.querySelector
+
+        */
+       const $box = document.querySelector('.box')
+       const $node = $box.document.querySelector('.child')
+       const $$nodes = $box.document.querySelectorAll('.child')
+
+       const $ = s => document.querySelector(s)
+       const $$ = s => document.querySelectorAll(s)
+       console.log($('.box'));
+       console.log($$('.box'));
+
+    </script>
+</body>
+</html>

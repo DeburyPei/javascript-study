@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">box1</div>
+    <div class="box">box2</div>
+    <script>
+        /*
+            1.querySelector 的参数是一个任意合法的CSS3选择器
+            2.querySelectorAll得到的是一个类数组对象 需要遍历才能操作
+            3.NodeList和HTMLCollection的差异是前者有forEach方法
+        
+        */
+        //获取的是一个Element
+        document.querySelector('.box')
+        //获取的是一个NodeList类数组对象 包含多个Element
+        let $$boxes = document.querySelectorAll('.box')
+        console.log([...$$boxes]); // 类数组转换为数组
+        //已过时不推荐
+        document.getElementById('id')
+    </script>
+</body>
+</html>

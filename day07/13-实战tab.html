@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .com-tab{width: 600px;}
+        .com-tab .header{display: flex;}
+
+        .com-tab ul {list-style: none;}
+        .com-tab .tab{
+            margin-right: 20px;
+            cursor: pointer;
+        }
+        .com-tab .tab.active{
+            color:blue;
+            border-bottom: 1px solid currentColor;
+        }
+        .com-tab .panel{
+            border: 1px solid #ccc;
+            height: 200px;
+            padding: 20px;
+            display: none;
+        }
+        .com-tab .panel.active{display: block;}
+    </style>
+</head>
+<body>
+    <div class="com-tab">
+        <ul class="header">
+            <li class="tab active">用户管理</li>
+            <li class="tab">配置管理</li>
+            <li class="tab">角色管理</li>
+        </ul>
+        <ul class="content">
+            <li class="panel active">用户管理的内容</li>
+            <li class="panel">配置管理的内容</li>
+            <li class="panel">角色管理的内容</li>
+        </ul>
+    </div>
+    <script>
+        /*
+            给样式定义一个class
+            点击某个tab 让所有的tab都去掉该class 把点击tab添加该class
+            根据点击的tab得到该tab的序号
+            让所有面板都隐藏 让对应面板 tab序号展示
+        */
+        const $ = s => document.querySelector(s)
+        $$tabs = document.querySelectorAll('.tab')
+        $$panels = document.querySelectorAll('.panel')
+
+        $$tabs.forEach($tab =>{
+            $tab.onclick = function(){
+                $$tabs.forEach($node=>$node.classList.remove('active'))
+                $tab.classList.add('active') 
+
+                let index = [...$$tabs].indexOf($tab)
+                $$panels.forEach($panel=>$panel.classList.remove('active'))
+                $$panels[index].classList.add('active')
+            }
+        })
+       
+    </script>
+</body>
+</html>

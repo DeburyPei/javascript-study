@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="a" class="box box1">
+        box1
+        <span>span1</span>
+        <span>span2</span>
+        <span>span3</span>
+    </div>
+    <div class="box">box1</div>
+    <div class="box">box2</div>
+    <script>
+        /*
+            常见属性
+                node.nodeName    元素标签名 还有个类似的tagName 
+                node.className   类名
+                node.id          元素id
+                node.nodeType    元素类型
+            
+            关系遍历
+                node.children       子元素列表 HTMLCollection 不包含文本节点
+                node.childNodes     子元素列表 NodeList 包含文本节点
+                node.firstChild     第一个子元素
+                node.lastChild      最后一个子元素
+                node.nextSibling    下一个兄弟元素
+                node.nextElementSibling 下一个兄弟元素 不包含文本节点
+                node.previousSibling  上一个兄弟元素
+                node.parentNode       父元素
+
+            其它
+                document.body === document.querySelector('body')
+                document.head === document.querySelector('head')
+                document.title === document.querySelector('title').innerTex
+        
+        */
+       const $ = s =>document.querySelector(s)
+       
+    </script>
+</body>
+</html>
