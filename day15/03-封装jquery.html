@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red {
+            color: red;
+        }
+
+        .green {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="red">1</div>
+    <div class="red">2</div>
+    <div class="red">3</div>
+    <div class="red">4</div>
+    <div class="red">5</div>
+    <div class="red">6</div>
+    <div class="red">7</div>
+    <div class="red">8</div>
+    <div class="red">9</div>
+    <div class="red">10</div>
+    <button>click</button>
+    <button class="button1">delete</button>
+    <script>
+        // $('.red').addClass('green')
+        // 没有返回元素 而是返回能操作元素的函数
+        function jQuery(selector) {
+            const allElementArray = document.querySelectorAll(selector)  // 伪数组
+            const allElement = [...allElementArray]
+            return {
+                addClass(className) {
+
+                    allElement.forEach(
+                        标签 => {
+                            标签.classList.add(className)
+                        }
+                    )
+                },
+                removeClass(className) {
+
+                    allElement.forEach(
+                        标签 => {
+                            标签.classList.remove(className)
+                        }
+                    )
+                }
+            }
+        }
+        const $ = jQuery
+        document.querySelector('button').onclick = function () {
+            $('.red').addClass('green')
+            // $('.red').removeClass('red')
+        }
+        document.querySelector('.button1').onclick = function () {
+            // $('.red').addClass('green')
+            $('.red').removeClass('red')
+        }
+        // 使用会产生冗余  使用一次就创建一次 add remove 
+        $('.red').removeClass('red')
+
+        $('.red').removeClass('red')
+
+    </script>
+</body>
+
+</html>

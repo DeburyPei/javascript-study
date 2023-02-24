@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red {
+            color: red;
+        }
+
+        .green {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="red">1</div>
+    <div class="red">2</div>
+    <div class="red">3</div>
+    <div class="red">4</div>
+    <div class="red">5</div>
+    <div class="red">6</div>
+    <div class="red">7</div>
+    <div class="red">8</div>
+    <div class="red">9</div>
+    <div class="red">10</div>
+    <button>click</button>
+    <script>
+        document.querySelector('button').onclick = function () {
+            const 所有标签 = document.querySelectorAll('.red')
+            所有标签.forEach(
+                标签=>{
+                    标签.classList.add('green')
+                }
+            )
+
+        }
+    </script>
+</body>
+
+</html>
