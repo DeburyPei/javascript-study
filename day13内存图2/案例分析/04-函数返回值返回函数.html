@@ -1,0 +1,8 @@
+<script>
+    const f = function(){
+        return function x(){console.log(1);}
+    }
+    button.onclick = f()  // 这种情况还是返回值 只不过返回一个函数
+    //等价于
+    button.onclick = function x(){console.log(1);}
+</script>

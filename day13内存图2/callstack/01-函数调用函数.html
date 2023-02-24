@@ -1,0 +1,26 @@
+<script>
+    const f1 = function(){
+        console.log(1);
+        f2()
+    }
+    const f2 = function(){
+        console.log(2);
+        
+    }
+
+    f1()//undefined
+</script>
+
+<script>
+    const f1 = function(){
+        const value1 = 1
+        const obj1 = {number:1}
+        return f2(value1,obj1)
+    }
+    const f2 = function(x,y){
+        const value2 = 2
+        const obj2 = {number:2}
+        return x + y.number + value2 + obj2.number
+    }
+    f1()  // 6
+</script>

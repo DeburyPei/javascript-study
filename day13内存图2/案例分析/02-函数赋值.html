@@ -1,0 +1,32 @@
+<script>
+    const f1 = function(){console.log(1);}
+    const button = document.querySelector('.ok')
+
+    button.onclick = f1
+    undefined
+    // 什么都不会打印  除非用户点击按钮
+</script>
+
+button  #303  
+f1      #101
+
+#303
+id
+class
+
+click :#101
+
+
+<script>
+    const f = function(){return '返回值'}
+    
+
+    button.onclick = f      // 地址
+    //等价
+    button.onclick = #404
+    button.onclick = f()  // 返回值
+    //等价
+    button.onclick ='返回值'
+
+
+</script>

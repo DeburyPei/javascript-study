@@ -1,0 +1,15 @@
+html中
+<!-- <button onclick="f"></button>  错误 这里不是赋值  -->
+<button onclick="f()"></button> 就相当于填充onclick的方法体 onclick=" 一段代码 "
+
+
+vue template
+2者都可以 vue自动分辨
+<button @click="f"> </button>    
+<button @click="f()"> </button>
+
+react template
+react 尽量模仿js语法  所以f是函数   但是f()是函数返回值
+<button @click="{f}"> </button>    
+<!-- <button @click="{f()}"> </button>  错误 -->
+

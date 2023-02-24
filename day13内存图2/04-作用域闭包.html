@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <script>
+        // closure 闭包  不是函数 而是函数的一个特性 访问外面就是闭包 没访问就不叫
+        // 如果一个函数访问了它外面的自由变量 那么这个函数加这些变量的总和就叫闭包  
+        //访问函数外的参数
+        const f1 = function () {
+            const value1 = 1
+            const obj1 = { number: 1 }
+            const f2 = function (x, y) {
+                const value2 = 2
+                const obj2 = { number: 2 }
+                return x + y.number + value2 + obj2.number
+            }
+            return f2(value1, obj1)
+        }
+
+        f1() 
+    </script>
+    <script>
+       // 词法作用域根据执行位置 赋值
+       // 就近原则 先看当前作用域 再看上级作用域 最后看全局作用域 如果都找不到就报错
+        const f1 = function () {
+            const value1 = 1
+            const obj1 = { number: 1 }
+            
+            return f2(value1, obj1)
+        }
+        const f2 = function (x, y) {
+                const value2 = 2
+                const obj2 = { number: 2 }
+                return x + y.number + value2 + obj2.number
+            }
+        f1() 
+    </script>
+</body>
+
+</html>

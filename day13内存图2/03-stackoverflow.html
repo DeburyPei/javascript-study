@@ -1,0 +1,17 @@
+<script>
+    let n = 0
+    const f1 = function(){
+        n += 1
+        console.log('n = '+ n,"到我执行了");
+        try{
+            f1()
+        }catch(err){
+            console.error('stack满了');
+            console.error(err);
+        }
+        console.log('我要退出了',n);
+        return
+    }
+    f1()
+    log(n)
+</script>
