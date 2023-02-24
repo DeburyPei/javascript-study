@@ -1,0 +1,99 @@
+<script>
+    // 所有对象又可以sayHi 又可以 run
+    const sayHi = function(){
+        console.log(this.name + 'sayHi');
+    }
+    const run = function(){
+        console.log(this.name + 'run');
+    }
+    function Person(name='匿名',age=0){
+        return {
+            name,
+            age,
+           sayHi,
+           run
+        }
+        
+    }
+
+    //以上操作 占用太多全局变量空间
+
+  
+</script>
+
+<script>
+    // 包装在一个全局变量中 最多占用两个全局变量 一个是共有属性 一个是构造函数
+    const Person共有属性 = {
+         sayHi : function(){
+        console.log(this.name + 'sayHi');
+        },
+         run : function(){
+            console.log(this.name + 'run');
+        }
+    }
+   
+    function Person(name='匿名',age=0){
+        return {
+            name,
+            age,
+           sayHi:Person共有属性.sayHi,
+           run:Person共有属性.run,
+        }
+        
+    }
+
+    
+
+    const f1 = Person('pei',18)
+  
+</script>
+
+<script>
+    // 只用一个全局变量  函数也是对象
+    function Person(name='匿名',age=0){
+        return {
+            name,
+            age,
+           sayHi:Person.共有属性.sayHi,
+           run:Person.共有属性.run,
+        }        
+    }
+    Person.共有属性 = {
+        sayHi : function(){
+        console.log(this.name + 'sayHi');
+        },
+         run : function(){
+            console.log(this.name + 'run');
+        }
+    }
+    
+    const f1 = Person('pei',18)
+  
+</script>
+<script>
+    // 隐藏属性
+    function Person(name='匿名',age=0){
+        // Object.create  固定用法
+        const obj  = Object.create(Person.共有属性)
+        // obj = {隐藏属性：Person.共有属性}
+        
+        obj.name = name
+        obj.age = age
+        return obj
+          
+    }       
+    
+   Person.共有属性 = {
+        sayHi : function(){
+        console.log(this.name + 'sayHi');
+        },
+         run : function(){
+            console.log(this.name + 'run');
+        }
+    }
+    
+    const f1 = Person('pei',18)
+    // f1.__proto__
+    // {sayHi: ƒ, run: ƒ}
+  
+</script>

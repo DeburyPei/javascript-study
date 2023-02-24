@@ -1,0 +1,70 @@
+<script>
+     // 隐藏属性
+     function Person(name='匿名',age=0){
+       this.name = name
+       this.age = age
+          
+    }   
+     
+   Person.prototype.sayHi = function(){
+            console.log(this.name + 'sayHi');
+            }
+    Person.prototype.run = function(){
+                console.log(this.name + 'run');
+            }
+    /*
+    person创建自动创建这个
+    Person.prototype = {
+            constructor : Person
+        }
+    
+    *
+     /
+    // 以下会造成覆盖 
+    /*  
+        Person.prototype = {
+            constructor : Person
+        } 这个被覆盖就没有了
+         Person.prototype = {
+           
+            sayHi : function(){
+            console.log(this.name + 'sayHi');
+            },
+            run : function(){
+                console.log(this.name + 'run');
+            }
+        }
+    */ 
+    const f1 = new Person('pei',18)  // 这里需要 new Person
+
+    
+</script>
+
+<script>
+    
+    function Person(name='匿名',age=0){
+       this.name = name
+       this.age = age
+          
+    }   
+    
+     
+       //直接这么写 后续不添加
+         Person.prototype = {
+            constructor:Person,
+            sayHi : function(){
+            console.log(this.name + 'sayHi');
+            },
+            run : function(){
+                console.log(this.name + 'run');
+            }
+        }
+        const f1 = new Person('pei',18)  // 这里需要 new Person
+    
+</script>
+
+new 的 四个好处
+1.new 帮你自动创建对象
+2.new 帮你准备Person.共有属性(不要问属性名字)
+3.new 帮你关联隐藏属性与共有属性
+4.new 帮你 return 新对象

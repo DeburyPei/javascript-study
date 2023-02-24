@@ -1,0 +1,55 @@
+<script>
+    //共有属性不一定是函数
+    function Person(name='匿名',age=0){
+       this.name = name
+       this.age = age
+          
+    }   
+     
+   Person.prototype.sayHi = function(){
+            console.log(this.name + 'sayHi');
+            }
+    Person.prototype.run = function(){
+                console.log(this.name + 'run');
+            }
+            Person.prototype.种族 = '人类'        
+</script>
+
+
+<script>
+    //自有属性可以是函数 一般情况是在闭包的时候
+    function Person(name='匿名',age=0){
+       this.name = name
+       this.age = age
+        const x = 'xxx'
+        this.printX = function(){
+            console.log(x);
+        }
+    }   
+     
+   Person.prototype.sayHi = function(){
+            console.log(this.name + 'sayHi');
+            }
+    Person.prototype.run = function(){
+                console.log(this.name + 'run');
+            }
+            
+</script>
+<script>
+    // 箭头函数不能当构造函数 不支持this 不自带prototype
+     function Person(name='匿名',age=0){
+       this.name = name
+       this.age = age
+        const x = 'xxx'
+        this.printX = function(){
+            console.log(x);
+        }
+    }   
+     
+   Person.prototype.sayHi = function(){
+            console.log(this.name + 'sayHi');
+            }
+    Person.prototype.run = function(){
+                console.log(this.name + 'run');
+            }
+</script>

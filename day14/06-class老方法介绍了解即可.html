@@ -1,0 +1,19 @@
+共有属性一定是函数  
+共有一个非函数属性不可以
+只可以 
+    static x = 'xxx'
+    要自己声明才可以
+<script>
+    class Person{
+        constructor(name='1',age=1){
+            this.name = name
+            this.age = age
+        }
+        SayHi(){
+            console.log('hi');
+        }
+        SayHi1(){
+            console.log('hi1');
+        }
+    }
+</script>
