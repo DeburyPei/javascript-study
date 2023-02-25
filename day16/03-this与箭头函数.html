@@ -1,0 +1,29 @@
+<script>
+    const obj = {
+        name:'obj',
+        x(){
+            const f =()=>{
+                 console.log('this: '+this.name);   
+                 console.log(this);   //{name: 'obj', x: ƒ}
+
+            }
+            f()
+        }
+    }
+    obj.x()
+    // 箭头函数看声明
+    x()
+    /*{     
+            
+            相当于  this === obj  true 
+            const f =()=>{
+                 console.log('this: '+this.name);   
+            }
+        }*/
+        这个里面的this全是obj
+</script>
+箭头函数不支持this
+具体表现
+    1.箭头函数 认为this和 a,b,c 普通变量没区别
+    2.就算用call 给箭头函数传this 箭头函数也不接受this
+    3.箭头函数不支持new调用

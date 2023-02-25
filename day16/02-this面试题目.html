@@ -1,0 +1,19 @@
+<script>
+    const obj = {
+        name:'obj',
+        fn(){
+            console.log('this: '+this.name);
+        }
+    }
+    obj.fn()     //   obj  输出 obj
+    const fn = obj.fn;  fn();    //   window  输出 ''  空字符串
+    [obj.fn][0]()
+            // const arr = [obj.fn]
+            // arr[0]()
+            // arr.0()
+            //所以是 arr 是this 也就是 [obj.fn]   打印出undefined
+    let f;(f = obj.fn)()
+    // 与第二次一样
+     //   window  输出 ''  空字符串
+        
+</script>

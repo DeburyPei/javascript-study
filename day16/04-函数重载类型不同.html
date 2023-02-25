@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red {
+            color: red;
+        }
+
+        .green {
+            
+            color: green;
+        }
+        .big{
+            font-size: 32px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="red">1</div>
+    <div class="red">2</div>
+    <div class="red">3</div>
+    <div id="x">
+        <div class="red">4</div>
+        <div class="red">5</div>
+        <div class="red">6</div>
+    </div>
+    <div class="red">7</div>
+    <div class="red">8</div>
+    <div class="red">9</div>
+    <div class="red">10</div>
+    <button>click</button>
+    <button class="button1">delete</button>
+    <script>
+
+
+        // 参数类型不同
+        function jQuery(selectorOrElementOr标签伪数组) {
+            
+            if(!(this instanceof jQuery)){
+                //这个不是由jquery 创建的   instanceof 判断类型
+                return new jQuery(selectorOrElementOr标签伪数组)
+            }
+            // if(this === undefined || this === window){
+            //     //用户忘了创建new
+            //     return new jQuery(selector)
+            // }
+            if(typeof selectorOrElement === 'string'){
+                this.allElementArray = document.querySelectorAll(selectorOrElementOr标签伪数组)  // 伪数组
+                this.allElement = [...this.allElementArray]
+
+            }else if(selectorOrElementOr标签伪数组 instanceof Element){
+                // 确定是标签 元素
+                // 都转换为数组形式 方便addClass 函数的统一形式  forEach的调用
+                this.allElement = [selectorOrElementOr标签伪数组]
+
+            }else{
+                // 标签数组
+                console.log(selectorOrElementOr标签伪数组);
+                this.allElement = [...selectorOrElementOr标签伪数组]
+            }
+           
+        }
+        jQuery.prototype = {
+            constructor: jQuery,
+            addClass(className) {
+                // console.log(this);
+                //jQuery {allElementArray: NodeList(10), allElement: Array(10)}
+                const {allElement }= this
+                allElement.forEach(
+                    标签 => {
+                        标签.classList.add(className)
+                    }
+                )
+                return this
+            },
+            
+        }
+        const $ = jQuery
+        document.querySelector('button').onclick = function () {
+            // const div = document.getElementById('x')
+            // $(div).addClass('green').addClass('big')
+            const red = document.querySelectorAll('.red')
+            $(red).addClass('green').addClass('big')        }
+    </script>
+</body>
+
+</html>
+

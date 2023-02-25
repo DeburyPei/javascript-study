@@ -1,0 +1,13 @@
+<!-- 
+    确定this的值
+        三种途径
+            1.查看mdn文档
+            2.查看浏览器源码
+            3.查看函数调用  不能看函数声明
+    
+    5种调用形式 
+        fn(参数1)    this = window | undefined    fn.call(undefined,参数1)
+        obj.method(参数1)   this = obj
+        fn.call(神秘参数,参数1)     this = 神秘参数
+        fn.apply(神秘参数,[参数1])   this = 神秘参数
+ -->
