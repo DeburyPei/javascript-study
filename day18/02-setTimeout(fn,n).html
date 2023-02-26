@@ -1,0 +1,27 @@
+<script>
+    /*
+        setTimeout(fn,n)
+            保证fn会在n+ little 时间后执行 （little反应时间）
+            如果js不忙 little就很小
+            如果js很忙 就一直要等到js空闲为止
+        到底推迟多久执行
+            不知道
+            可能是n毫秒+1毫秒 也可能是n毫秒+10秒
+    */
+</script>
+<script>
+    let sum = 0
+    console.time('用时')
+
+    setTimeout(()=>{
+        console.timeEnd('用时')
+
+    },1000)
+    
+    for(let i = 0 ; i<100_0000;i++){
+        sum+=1
+    }
+    //用时: 1000.925048828125 mss
+</script>
+
+

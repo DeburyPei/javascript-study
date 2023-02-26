@@ -1,0 +1,22 @@
+<script>
+    /*
+        任务队列
+            规律
+                全局作用域可以视为一个大函数的函数体
+                这个函数处于任务队列的第一位
+                setTimeout（fn,n）中的fn会放入任务队列
+                任务队列中的计时任务如果还没到时间就不会执行
+    */
+</script>
+<script>
+    const fn = ()=>{
+        console.log(1);
+    }
+    setTimeout(fn,1000)
+    setTimeout(fn,2000)
+    setTimeout(fn,3000)
+
+    // setTimeout(fn,3000)
+    // setTimeout(fn,2000)
+    // setTimeout(fn,1000)
+</script>
