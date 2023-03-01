@@ -1,0 +1,19 @@
+<!-- 
+     发布订阅
+        1.通过button.addEventListener('click',fn) 监听/订阅事件
+        2.用户点击触发button.dispatchEvent(..."click") 执行 即触发事件
+        3.fn被调用
+
+
+    Obj对象只有三个属性
+        addEventListener dispatchEvent removeEventListener
+
+
+     发布订阅模式的特点
+        1.api提供了addEventListener / on I subscribe
+        2.api提供了dispatchEvent I emit / trigger
+        3.api提供了remoIeEventListener / off I unsubscribe
+        满足上述条件的对象被称为EventEmitter,实现了发布订阅模式
+    本质
+        把回调(函数) 放在队列(数组)里，等待被逐个调用
+ -->
