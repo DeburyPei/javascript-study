@@ -1,0 +1,7 @@
+<!-- 
+    反向代理跨域
+    假设 a.com:8888 想把GET /data 共享给 b.com:7777
+    1.b.com后端提供一个/data Nginx配置  location /data{proxy_pass http://a.com:8888;}
+    2.b.com 通过Ajax访问b.com/data
+    3.b.com/data 向a.com/data 发请求 得到响应之后给b.com的前端
+ -->

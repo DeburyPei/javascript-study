@@ -1,0 +1,21 @@
+<!-- JSONP
+
+步骤
+    假设 a.com:8888 想把GET /data 共享给 b.com:7777
+    1. b.com 提前放置一个回调 把回调告诉a.com
+    2. b.com 通过<script>标签来请求/data
+    3. a.com 后端改造/data 把JSON 变成JSONP
+
+缺点
+    <script> 只能发get请求
+    无法定向分享 可以用 referrer 实现定向
+
+script标签可以获取 别的js 通过src 获取 但是只能运行 执行 不知道里面是什么内容 不知道源码
+-->
+<!-- 
+    JSONP 本质
+    取巧
+        由于<script> 标签不受同源策略约束 可以请求任意js 所以后端把数据直接放在js里了
+        对回调的使用是JSONP点睛之笔
+    与JSON毫无关系
+ -->
